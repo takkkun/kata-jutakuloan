@@ -36,3 +36,36 @@ public class RepaymentPerMonth implements Serializable {
     private final BigDecimal balance;
 }
 ```
+
+## 返済額の計算式
+
+返済額の計算は元利均等返済と元金均等返済の2通りが選べる。
+それぞれの計算式を以下に示す。
+
+```
+Rm: 毎月返済額
+Ri: 利息返済額
+Rp: 元金返済額
+r: 借入金額
+Im: 月利
+T: 返済回数
+b: 直前のローン残高
+```
+
+### 元利均等返済
+
+![](https://latex.codecogs.com/gif.latex?Rm%20%3D%20%5Cfrac%7Bb%20%5Ctimes%20i%20%5Ctimes%20%281%20&plus;%20Im%29%5E%7BT%7D%7D%7B%281%20&plus;%20Im%29%5E%7BT%7D%20-%201%7D)
+
+![](https://latex.codecogs.com/gif.latex?Ri%20%3D%20b%20%5Ctimes%20Im)
+
+![](https://latex.codecogs.com/gif.latex?Rp%20%3D%20Rm%20-%20Ri)
+
+
+### 元金均等返済
+
+![](https://latex.codecogs.com/gif.latex?Rm%20%3D%20%5Cfrac%7Br%7D%7BT%7D)
+
+![](https://latex.codecogs.com/gif.latex?Ri%20%3D%20b%20%5Ctimes%20Im)
+
+![](https://latex.codecogs.com/gif.latex?Rm%20%3D%20Rp%20&plus;%20Ri)
+
