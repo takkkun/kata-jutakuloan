@@ -5,7 +5,7 @@
 - 金利(年利)
 - 返済期間(年)
 
-ローン返済計画のを表すRepaymentPerMonthのStreamを実装してください。
+ローン返済計画のを表すRepaymentPerMonthのStreamを返すLoanクラスを実装してください。
 RepaymentPerMonthは、以下のフィールドを持ちます。
 
 - 返済回数(何回目か?)
@@ -41,6 +41,8 @@ public class RepaymentPerMonth implements Serializable {
 
 返済額の計算は元利均等返済と元金均等返済の2通りが選べる。
 それぞれの計算式を以下に示す。
+
+計算の過程で出た端数は、すべて切り上げとします。
 
 ```
 Rm: 毎月返済額
