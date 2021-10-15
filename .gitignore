@@ -38,3 +38,6 @@ buildNumber.properties
 # IDEA
 .idea
 *.iml
+
+# Kysymys
+kysymys.properties
