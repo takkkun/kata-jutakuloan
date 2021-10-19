@@ -6,7 +6,7 @@ import exam.RepaymentMonth;
 
 import java.math.BigDecimal;
 
-public class LimitedFixedInterestRate implements FixedInterestRate {
+class LimitedFixedInterestRate implements FixedInterestRate {
 
     private final BigDecimal rate;
 
@@ -14,7 +14,7 @@ public class LimitedFixedInterestRate implements FixedInterestRate {
 
     private final FloatingInterestRate interestRateAfterFixed;
 
-    public LimitedFixedInterestRate(final BigDecimal rate, final int term, final FloatingInterestRate interestRateAfterFixed) {
+    LimitedFixedInterestRate(final BigDecimal rate, final int term, final FloatingInterestRate interestRateAfterFixed) {
         this.rate = rate;
         this.term = term;
         this.interestRateAfterFixed = interestRateAfterFixed;

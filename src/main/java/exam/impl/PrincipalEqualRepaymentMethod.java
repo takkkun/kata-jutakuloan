@@ -5,7 +5,7 @@ import exam.RepaymentMethod;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class PrincipalEqualRepaymentMethod implements RepaymentMethod {
+class PrincipalEqualRepaymentMethod implements RepaymentMethod {
 
     private final BigDecimal amountOfMoneyBorrowed;
 
@@ -13,7 +13,7 @@ public class PrincipalEqualRepaymentMethod implements RepaymentMethod {
 
     private final Integer times;
 
-    public PrincipalEqualRepaymentMethod(final BigDecimal amountOfMoneyBorrowed, final Integer numberOfRepayments, final Integer times) {
+    PrincipalEqualRepaymentMethod(final BigDecimal amountOfMoneyBorrowed, final Integer numberOfRepayments, final Integer times) {
         this.amountOfMoneyBorrowed = amountOfMoneyBorrowed;
         this.numberOfRepayments = numberOfRepayments;
         this.times = times;

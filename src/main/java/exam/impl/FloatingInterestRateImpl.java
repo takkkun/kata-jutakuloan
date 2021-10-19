@@ -8,11 +8,11 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FloatingInterestRateImpl implements FloatingInterestRate {
+class FloatingInterestRateImpl implements FloatingInterestRate {
 
     private final Map<RepaymentMonth, BigDecimal> rates = new HashMap<>();
 
-    public FloatingInterestRateImpl(final BigDecimal initialRate) {
+    FloatingInterestRateImpl(final BigDecimal initialRate) {
         rates.put(RepaymentMonth.LOWER, initialRate);
     }
 

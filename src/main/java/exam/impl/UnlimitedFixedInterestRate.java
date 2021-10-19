@@ -5,11 +5,11 @@ import exam.RepaymentMonth;
 
 import java.math.BigDecimal;
 
-public class UnlimitedFixedInterestRate implements FixedInterestRate {
+class UnlimitedFixedInterestRate implements FixedInterestRate {
 
     private final BigDecimal rate;
 
-    public UnlimitedFixedInterestRate(final BigDecimal rate) {
+    UnlimitedFixedInterestRate(final BigDecimal rate) {
         this.rate = rate;
     }
 
