@@ -24,6 +24,11 @@ public class LowerBoundRepaymentMonth implements RepaymentMonth {
     }
 
     @Override
+    public long elapsedYears(final RepaymentMonth endExclusive) {
+        throw new UnsupportedOperationException("elapsedYears");
+    }
+
+    @Override
     public String toString() {
         return "Lower bound";
     }

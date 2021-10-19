@@ -13,6 +13,8 @@ public interface RepaymentMonth extends Comparable<RepaymentMonth> {
 
     boolean isBefore(RepaymentMonth other);
 
+    long elapsedYears(RepaymentMonth endExclusive);
+
     static RepaymentMonth of(int year, int month) {
         return new RepaymentMonthImpl(year, month);
     }

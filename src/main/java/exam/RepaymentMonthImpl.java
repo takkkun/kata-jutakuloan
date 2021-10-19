@@ -2,6 +2,7 @@ package exam;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
@@ -45,6 +46,15 @@ public class RepaymentMonthImpl implements RepaymentMonth {
             throw new IllegalArgumentException(other.getClass() + " is not supported");
         }
 
+    }
+
+    @Override
+    public long elapsedYears(final RepaymentMonth endExclusive) {
+        if (endExclusive instanceof RepaymentMonthImpl) {
+            return ChronoUnit.YEARS.between(month, ((RepaymentMonthImpl) endExclusive).month);
+        } else {
+            return endExclusive.elapsedYears(this);
+        }
     }
 
     @Override
