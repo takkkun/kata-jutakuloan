@@ -2,7 +2,7 @@ package exam;
 
 import java.util.stream.Stream;
 
-public interface RepaymentMonth {
+public interface RepaymentMonth extends Comparable<RepaymentMonth> {
     RepaymentMonth LOWER = new LowerBoundRepaymentMonth();
 
     RepaymentMonth nextMonth();

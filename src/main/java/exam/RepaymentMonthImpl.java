@@ -60,4 +60,13 @@ public class RepaymentMonthImpl implements RepaymentMonth {
     public String toString() {
         return DateTimeFormatter.ISO_DATE.format(month);
     }
+
+    @Override
+    public int compareTo(final RepaymentMonth o) {
+        if (o instanceof RepaymentMonthImpl) {
+            return month.compareTo(((RepaymentMonthImpl) o).month);
+        } else {
+            return 1;
+        }
+    }
 }

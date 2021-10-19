@@ -27,4 +27,13 @@ public class LowerBoundRepaymentMonth implements RepaymentMonth {
     public String toString() {
         return "Lower bound";
     }
+
+    @Override
+    public int compareTo(final RepaymentMonth o) {
+        if (o instanceof RepaymentMonthImpl) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
 }
