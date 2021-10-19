@@ -2,6 +2,7 @@ package exam;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
@@ -48,6 +49,15 @@ public class RepaymentMonthImpl implements RepaymentMonth {
     }
 
     @Override
+    public long elapsedYears(final RepaymentMonth endExclusive) {
+        if (endExclusive instanceof RepaymentMonthImpl) {
+            return ChronoUnit.YEARS.between(month, ((RepaymentMonthImpl) endExclusive).month);
+        } else {
+            return endExclusive.elapsedYears(this);
+        }
+    }
+
+    @Override
     public boolean equals(Object other) {
         return Optional.ofNullable(other)
                 .filter(RepaymentMonthImpl.class::isInstance)
@@ -59,5 +69,14 @@ public class RepaymentMonthImpl implements RepaymentMonth {
     @Override
     public String toString() {
         return DateTimeFormatter.ISO_DATE.format(month);
+    }
+
+    @Override
+    public int compareTo(final RepaymentMonth o) {
+        if (o instanceof RepaymentMonthImpl) {
+            return month.compareTo(((RepaymentMonthImpl) o).month);
+        } else {
+            return 1;
+        }
     }
 }
