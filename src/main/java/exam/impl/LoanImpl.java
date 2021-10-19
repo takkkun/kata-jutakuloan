@@ -9,11 +9,11 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.stream.Stream;
 
-public class LoanImpl implements Loan {
+class LoanImpl implements Loan {
 
     private final LoanCondition condition;
 
-    public LoanImpl(final LoanCondition condition) {
+    LoanImpl(final LoanCondition condition) {
         this.condition = condition;
     }
 
