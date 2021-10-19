@@ -31,4 +31,8 @@ public class LoanCondition implements Serializable {
     public RepaymentMethodType getRepaymentMethod() {
         return repaymentMethod;
     }
+
+    public Integer getNumberOfRepayments() {
+        return getRepaymentTerm() * 12;
+    }
 }
